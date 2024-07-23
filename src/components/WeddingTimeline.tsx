@@ -52,6 +52,7 @@ export default function CustomizedTimeline() {
                         <Typography gutterBottom>Mingle and enjoy some delicious canapés and drinks after the ceremony.</Typography>
                         <Typography fontStyle="italic" color="textSecondary">The Dairy - Stones of the Yarra Valley</Typography>
                         <Typography fontStyle="italic" color="textSecondary">14 St Huberts Rd, Coldstream VIC 3770, Australia</Typography>
+                        <br />
                     </TimelineContent>
                 </TimelineItem>
 
@@ -68,6 +69,7 @@ export default function CustomizedTimeline() {
                         <Typography gutterBottom>Join us for lunch, drinks, cake and speeches.</Typography>
                         <Typography fontStyle="italic" color="textSecondary">The Stables - Stones of the Yarra Valley</Typography>
                         <Typography fontStyle="italic" color="textSecondary">14 St Huberts Rd, Coldstream VIC 3770, Australia</Typography>
+                        <br />
                     </TimelineContent>
                 </TimelineItem>
 
@@ -83,9 +85,9 @@ export default function CustomizedTimeline() {
                         <Typography gutterBottom>Keep the celebration going, in a laid-back way.</Typography>
                         <Typography fontStyle="italic" color="textSecondary">Boyle Household</Typography>
                         <Typography fontStyle="italic" color="textSecondary"><EncryptedText text="U2FsdGVkX18+IkE+L+iLLc8W401Xa2wzscCN+IVtCU9EVZkXIoleg9QeMSpgDRQnQzclYPTvmz8pma7VztQlqw==" /></Typography>
+                        <br />
                     </TimelineContent>
                 </TimelineItem>
-
             </Timeline>
 
             <Typography textAlign="center" variant="h5" gutterBottom>Saturday 28th September 2024</Typography>
@@ -108,6 +110,7 @@ export default function CustomizedTimeline() {
                         <Typography gutterBottom>If you're up for it, come and hang out the next day for some food and footy.</Typography>
                         <Typography fontStyle="italic" color="textSecondary">Ketchup Household</Typography>
                         <Typography fontStyle="italic" color="textSecondary"><EncryptedText text="U2FsdGVkX1+55XaV+Jk3FwGnX7rPOAHUvLKUOjhqUb7pPyHI5rcHVn9kWcb31zvrC9U2R+YGg1hucNgfTBHuIg==" /></Typography>
+                        <br />
                     </TimelineContent>
                 </TimelineItem>
             </Timeline>
