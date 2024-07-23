@@ -8,7 +8,7 @@ interface EncryptedTextProps {
 
 const EncryptedText: React.FC<EncryptedTextProps> = ({ text }) => {
     const { password } = usePassword();
-    const [decryptedText, setDecryptedText] = useState<string>('');
+    const [decryptedText, setDecryptedText] = useState<string>('TEXT HIDDEN: INCORRECT PASSWORD');
 
     useEffect(() => {
         try {
@@ -16,13 +16,13 @@ const EncryptedText: React.FC<EncryptedTextProps> = ({ text }) => {
             const decrypted = bytes.toString(CryptoJS.enc.Utf8);
             setDecryptedText(decrypted);
         } catch (e) {
-            setDecryptedText('Invalid password');
+            setDecryptedText('TEXT HIDDEN: INCORRECT PASSWORD');
         }
     }, [password]);
 
     return (
         <div>
-            {decryptedText}
+            {!!decryptedText ? decryptedText : 'TEXT HIDDEN: INCORRECT PASSWORD'}
         </div>
     );
 };

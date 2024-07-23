@@ -1,7 +1,12 @@
 // import CryptoJS from 'crypto-js';
-import EncryptedText from './components/EncryptedText';
+import { Container } from '@mui/material';
 import { usePassword } from './components/PasswordContext';
 import PasswordDialog from './components/PasswordDialog';
+import WeddingHero from './components/WeddingHero';
+import WeddingRsvp from './components/WeddingRsvp';
+import WeddingTimeline from './components/WeddingTimeline';
+import WeddingTransportInfo from './components/WeddingTransportInfo';
+import WeddingFaqs from './components/WeddingsFaqs';
 
 function App() {
   const { password } = usePassword();
@@ -12,7 +17,13 @@ function App() {
 
   return (
     <>
-      <EncryptedText text='U2FsdGVkX1/4unp9awIHKnKqx25D3NSGJJ9Pj9gDftU=' />
+      <WeddingHero />
+      <Container>
+        <WeddingTimeline />
+        <WeddingTransportInfo />
+        <WeddingFaqs />
+        <WeddingRsvp />
+      </Container>
     </>
   )
 }

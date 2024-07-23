@@ -7,17 +7,17 @@ import type {} from '@mui/lab/themeAugmentation';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#556cd6',
+            main: '#668473',
         },
         secondary: {
-            main: '#19857b',
+            main: '#33353E',
         },
         error: {
             main: red.A400,
         },
     },
     typography: {
-        fontSize: 18,
+        fontFamily: 'PT Serif',
     },
 });
 
