@@ -1,9 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
+import { CssBaseline, ThemeProvider } from '@mui/material'
+import theme from './theme.tsx'
+import { PasswordProvider } from './components/PasswordContext.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <PasswordProvider>
+        <CssBaseline />
+        <App />
+      </PasswordProvider>
+    </ThemeProvider>
   </React.StrictMode>,
 )
