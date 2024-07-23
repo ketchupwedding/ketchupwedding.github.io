@@ -1,10 +1,12 @@
 import { Button, Dialog, DialogActions, DialogContent, TextField } from '@mui/material';
+import CryptoJS from 'crypto-js';
 import React, { useState } from 'react';
 import { usePassword } from './PasswordContext';
 
 const PasswordDialog = () => {
     const [open, setOpen] = useState(true);
     const { setPassword } = usePassword();
+    const [error, setError] = useState('');
 
     const handleClose = () => {
         setOpen(false);
@@ -14,15 +16,19 @@ const PasswordDialog = () => {
         <>
             <Dialog
                 open={open}
-                onClose={handleClose}
                 PaperProps={{
                     component: 'form',
                     onSubmit: (e: React.FormEvent<HTMLFormElement>) => {
                         e.preventDefault();
                         const formData = new FormData(e.currentTarget);
                         const password = formData.get('password') as string;
-                        setPassword(password);
-                        handleClose();
+
+                        if (decrypt("U2FsdGVkX1+xRaYTZkj8G7qN8s5lSMjUNXdbGPmaGVY=", password) !== "password") {
+                            setError("Incorrect password");
+                        } else {
+                            setPassword(password);
+                            handleClose();
+                        }
                     }
                 }}
             >
@@ -37,6 +43,8 @@ const PasswordDialog = () => {
                         type='password'
                         fullWidth
                         variant='standard'
+                        error={!!error}
+                        helperText={error}
                     />
                 </DialogContent>
                 <DialogActions>
@@ -46,5 +54,16 @@ const PasswordDialog = () => {
         </>
     );
 };
+
+// function encrypt(plainText: string, password: string): string {
+//     const encrpyted = CryptoJS.AES.encrypt(plainText, password).toString();
+//     return encrpyted;
+// }
+
+function decrypt(cipherText: string, password: string): string {
+    const bytes = CryptoJS.AES.decrypt(cipherText, password);
+    const decrypted = bytes.toString(CryptoJS.enc.Utf8);
+    return decrypted;
+}
 
 export default PasswordDialog;

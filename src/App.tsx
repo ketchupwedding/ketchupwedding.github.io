@@ -1,4 +1,3 @@
-// import CryptoJS from 'crypto-js';
 import { Container } from '@mui/material';
 import { usePassword } from './components/PasswordContext';
 import PasswordDialog from './components/PasswordDialog';
@@ -28,9 +27,6 @@ function App() {
   )
 }
 
-// function encrypt(plainText: string, password: string): string {
-//   const encrpyted = CryptoJS.AES.encrypt(plainText, password).toString();
-//   return encrpyted;
-// }
+
 
 export default App
